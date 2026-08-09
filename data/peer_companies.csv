@@ -1,0 +1,25 @@
+company,metric,value,unit,fiscal_year,source
+E.ON,adjusted_ebitda,9.8,EUR bn,2025,E.ON FY2025 results (EQS/Investegate)
+E.ON,gross_investment,8.5,EUR bn,2025,E.ON FY2025 results
+RWE,adjusted_ebitda,5.1,EUR bn,2025,RWE FY2025 reporting
+RWE,adjusted_ebitda,5.7,EUR bn,2024,RWE FY2025 reporting
+RWE,adjusted_net_income,1.8,EUR bn,2025,RWE FY2025 reporting
+RWE,adjusted_net_income,2.3,EUR bn,2024,RWE FY2025 reporting
+RWE,gross_investment,11.0,EUR bn,2025,RWE FY2025 reporting
+RWE,net_investment_plan_to_2031,35,EUR bn,2025,RWE investor communications
+RWE,portfolio_target_2031,65,GW,2025,RWE investor communications
+EnBW,adjusted_ebitda,5.1,EUR bn,2025,EnBW fiscal 2025 results
+EnBW,grids_segment_ebitda,2.7,EUR bn,2025,EnBW fiscal 2025 results
+EnBW,gross_investment,7.6,EUR bn,2025,EnBW fiscal 2025 results
+EnBW,ebitda_ambition_2030_low,5.8,EUR bn,2025,EnBW fiscal 2025 results
+EnBW,ebitda_ambition_2030_high,6.6,EUR bn,2025,EnBW fiscal 2025 results
+EnBW,capital_increase,3.1,EUR bn,2025,EnBW press
+Vattenfall,investment_germany_to_2028,5,EUR bn (more than),2025,Vattenfall press / Baltic Wind
+Vattenfall,nordlicht_fid_capacity,1.6,GW,2025,Vattenfall press
+Vattenfall,berlin_heat_sale,1.4,EUR bn (approx),2024,Vattenfall press release
+Stadtwerke,vku_member_companies,1592,count,2022,VKU statistics
+Stadtwerke,sector_revenue,194,EUR bn,2022,VKU statistics
+Stadtwerke,employees,309,thousand,2022,VKU statistics
+Stadtwerke,retail_share_electricity,66,percent,2022,trade reporting (energiemarie)
+Stadtwerke,retail_share_gas,65,percent,2022,trade reporting (energiemarie)
+Stadtwerke,retail_share_heat,91,percent,2022,trade reporting (energiemarie)

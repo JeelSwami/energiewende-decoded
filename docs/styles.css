@@ -450,6 +450,50 @@ details.model-card code {
   padding: 0.08rem 0.35rem;
 }
 
+/* ---------- company selector ---------- */
+
+.selector-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin: 0 0 1.2rem; }
+.selector-row button {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit; font-size: 0.82rem; font-weight: 600;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+}
+.selector-row button[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+
+.player-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+  margin-bottom: 1.4rem;
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 880px) {
+  .player-panel { grid-template-columns: 1.15fr 1fr; }
+}
+.player-facts .facet { margin-bottom: 1rem; }
+.player-facts .facet h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.player-facts .facet p { font-size: 0.9rem; color: var(--ink-2); }
+.player-side .kpi-row { margin: 0 0 1rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.player-side .stat-tile { box-shadow: none; padding: 0.8rem 0.9rem; }
+.player-side .stat-tile .value { font-size: 1.3rem; }
+.player-chart h5 { font-size: 0.82rem; color: var(--ink-2); font-weight: 600; margin-bottom: 0.4rem; }
+.player-src { font-size: 0.74rem; color: var(--muted); margin-top: 0.8rem; }
+
 /* ---------- FAQ ---------- */
 
 .faq-list { max-width: 46rem; }

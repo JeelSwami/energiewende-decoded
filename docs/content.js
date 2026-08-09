@@ -66,6 +66,27 @@
       actual: [9.0, 9.8, null, null, null],
       target: [null, null, 9.5, 11.3, 13.0],
     },
+
+    // Peer comparison, fiscal 2025, from each company's own reporting
+    peers: {
+      ebitda2025: [
+        { name: "E.ON", v: 9.8 },
+        { name: "RWE", v: 5.1 },
+        { name: "EnBW", v: 5.1 },
+      ],
+      invest2025: [
+        { name: "RWE", v: 11.0 },
+        { name: "E.ON", v: 8.5 },
+        { name: "EnBW", v: 7.6 },
+      ],
+      rwe: { years: ["2024", "2025"], ebitda: [5.7, 5.1], ni: [2.3, 1.8] },
+      enbw: { labels: ["2025", "2030t"], actual: [5.1, null], target: [null, 6.2] },
+      sw: [
+        { key: "heat", v: 91 },
+        { key: "electricity", v: 66 },
+        { key: "gas", v: 65 },
+      ],
+    },
   };
 
   /* ---------------- i18n ---------------- */
@@ -80,6 +101,7 @@
     nav: {
       transition: "The transition",
       bottleneck: "The bottleneck",
+      players: "The players",
       eon: "E.ON in detail",
       simulator: "Load model",
       plays: "What follows",
@@ -122,9 +144,9 @@
       prose: "<p>By late 2025, grid connection requests for large battery storage exceeded <strong>500 GW</strong> nationwide. A BDEW survey of four transmission and 17 large distribution operators counted more than <strong>720 GW</strong>. The national peak load is roughly 80 GW, and only about 2.5 GW of large storage was actually in operation. Most of the queue consists of speculative options rather than projects, and real, financeable load waits behind it: at E.ON's distribution subsidiary Mitnetz Strom alone, 90 data centre requests add up to <strong>16.8 GW</strong>.</p><p>The remedies are known and contested. A maturity test for the queue (the Reifegradverfahren), the Bundesnetzagentur's new NEST framework for grid returns from December 2025, a federal subsidy of 6.5 billion euros that lowers 2026 transmission charges by about 57 percent, and the debate over stretching grid cost recovery across decades under the name Amortisationskonto. Each of these is an open construction site where careful analysis is scarce. That, frankly, is what makes this corner of the sector so interesting to work in.</p>",
     },
     eon: {
-      kicker: "03 · Company analysis",
+      kicker: "04 · The worked example",
       title: "E.ON: the clearest exposure to the grid decade",
-      lede: "Since the asset swap with RWE, completed in 2020, E.ON operates grids and retail and no longer runs large-scale generation. Europe's largest distribution operator and energy retailer is in effect a bet that Germany solves its grid problem. The 2025 results suggest the bet is working. The constraints explain why it still needs help.",
+      lede: "Since the asset swap with RWE, completed in 2020, E.ON operates grids and retail and no longer runs large-scale generation. Europe's largest distribution operator and energy retailer is in effect a bet that Germany solves its grid problem. The 2025 results suggest the bet is working. The constraints explain why it still needs help. I use E.ON as the worked example because it is the purest exposure to the grid decade; the section above shows how the same questions land for its peers.",
       prose: "<p><strong>What could stop the machine?</strong> Four things. Regulatory returns, if the NEST framework prices equity too thinly. The queue, because connection chaos consumes engineering capacity and political goodwill. Financing, because 48 billion euros over five years lands in a sector whose financing gap KfW and PwC estimate at 346 billion euros. And the commoditisation of retail, because mandatory dynamic tariffs make the cost of serving a customer, rather than the brand, the deciding variable. Each of these constraints leads to one of the questions in the next section.</p>",
       insights: [
         {
@@ -141,8 +163,103 @@
         },
       ],
     },
+    players: {
+      kicker: "03 · The players",
+      title: "Four business models, one transition",
+      lede: "The asset swap between E.ON and RWE, completed in 2020, split Germany's two former giants along the value chain. EnBW stayed integrated, Vattenfall narrowed its German footprint, and roughly 1,500 municipal utilities kept the customer relationships. The same policy shocks land differently on each model, which is what makes the comparison instructive. Select a company; every figure comes from public reporting.",
+      selectorLabel: "Select a company",
+      labels: { model: "Business model", bet: "The bet", risk: "The main risk" },
+      note: "Comparability: EBITDA values are each company's own adjusted EBITDA for fiscal 2025; investment values are gross investment as reported for 2025. Vattenfall reports at group level in Swedish kronor and publishes no separate German totals, and the municipal utilities are separate companies, so both are omitted from the euro comparisons rather than estimated. Company names are used only to identify the companies; this study is independent of all of them and uses no logos or brand assets.",
+      compare: {
+        ebitdaTitle: "Same year, different machines",
+        ebitdaSub: "Adjusted EBITDA, fiscal 2025, billion euros",
+        ebitdaNote: "Source: company reporting for fiscal 2025. Adjusted EBITDA as defined by each company.",
+        investTitle: "Who invested how much in 2025",
+        investSub: "Gross investment as reported, billion euros",
+        investNote: "Source: company reporting for fiscal 2025. RWE's figure is gross investment before divestments and farm-downs.",
+      },
+      charts: {
+        eonTitle: "Adjusted EBITDA by segment, 2025, billion euros",
+        rweTitle: "RWE, reported results, billion euros",
+        rweEbitda: "Adjusted EBITDA",
+        rweNi: "Adjusted net income",
+        enbwTitle: "EnBW, adjusted EBITDA, billion euros",
+        enbwActual: "Reported",
+        enbwTarget: "2030 ambition, midpoint",
+        swTitle: "Municipal utilities, retail market shares, percent",
+        heat: "Heat",
+        electricity: "Electricity",
+        gas: "Gas",
+      },
+      companies: {
+        eon: {
+          name: "E.ON",
+          model: "Regulated distribution grids and energy retail across Europe, with no large-scale generation of its own. Europe's largest distribution operator, examined in depth in the next section.",
+          bet: "That regulated grid investment compounds: 48 billion euros of planned investment for 2026 to 2030, aimed at about 13 billion euros of EBITDA by 2030.",
+          risk: "Regulatory returns and financing headroom. The connection queue consumes engineering capacity and political goodwill.",
+          tiles: [
+            { label: "Adjusted EBITDA, 2025", value: "€9.8", unit: "bn", delta: "+9% on 2024" },
+            { label: "Investment, 2025", value: "€8.5", unit: "bn" },
+            { label: "Retail customers", value: "46.8", unit: "m" },
+            { label: "German grid", value: "700k", unit: "km" },
+          ],
+          srcNote: "Figures: E.ON full year 2025 results (EQS/Investegate, March 2026).",
+        },
+        rwe: {
+          name: "RWE",
+          model: "Generation and trading: Europe's third-largest renewables operator and the number two in offshore wind, with no grids and no mass-market retail. The other half of the 2020 asset swap.",
+          bet: "That building flexible generation and renewables earns more than it costs: 35 billion euros of net investment planned to 2031, toward a portfolio of 65 GW.",
+          risk: "Merchant exposure. Capture prices, negative hours and policy shifts feed straight into earnings, which eased from 2024 to 2025.",
+          tiles: [
+            { label: "Adjusted EBITDA, 2025", value: "€5.1", unit: "bn", delta: "5.7 in 2024" },
+            { label: "Adjusted net income, 2025", value: "€1.8", unit: "bn", delta: "2.3 in 2024" },
+            { label: "Gross investment, 2025", value: "€11", unit: "bn" },
+            { label: "Portfolio target, 2031", value: "65", unit: "GW" },
+          ],
+          srcNote: "Figures: RWE full year 2025 reporting and investor communications.",
+        },
+        enbw: {
+          name: "EnBW",
+          model: "The integrated exception: a transmission operator (TransnetBW), distribution grids (Netze BW), generation and retail under one, largely publicly owned, roof.",
+          bet: "That integration pays through the transition: record gross investment of 7.6 billion euros in 2025, 87 percent of it into growth, toward an EBITDA ambition of 5.8 to 6.6 billion euros by 2030.",
+          risk: "The equity constraint. A capital increase of about 3.1 billion euros was already needed to fund the programme.",
+          tiles: [
+            { label: "Adjusted EBITDA, 2025", value: "€5.1", unit: "bn", delta: "+3% on 2024" },
+            { label: "Grids segment EBITDA", value: "≈€2.7", unit: "bn", delta: "+20% on 2024" },
+            { label: "Gross investment, 2025", value: "€7.6", unit: "bn", delta: "+22% on 2024" },
+            { label: "Capital increase", value: "≈€3.1", unit: "bn" },
+          ],
+          srcNote: "Figures: EnBW fiscal 2025 reporting. The 2030 ambition of 5.8 to 6.6 billion euros is charted at its midpoint.",
+        },
+        vattenfall: {
+          name: "Vattenfall · Germany",
+          model: "The focused guest: owned by the Swedish state, in Germany now renewables and retail after selling the Berlin heat business to the State of Berlin in 2024.",
+          bet: "That offshore wind and two retail strongholds carry the German business: more than 5 billion euros of investment in Germany to 2028, with the 1.6 GW Nordlicht wind farms approved in early 2025.",
+          risk: "Concentration. After the heat exit, the German footprint rests on a few large projects and the Berlin and Hamburg retail books.",
+          tiles: [
+            { label: "Investment in Germany to 2028", value: ">€5", unit: "bn" },
+            { label: "Nordlicht 1 and 2, approved 2025", value: "1.6", unit: "GW" },
+            { label: "Berlin heat sale, closed 2024", value: "≈€1.4", unit: "bn" },
+          ],
+          srcNote: "Figures: Vattenfall press releases, 2024 and 2025. Group results are reported in Swedish kronor, so no euro chart is shown here.",
+        },
+        stadtwerke: {
+          name: "Stadtwerke",
+          model: "Not one company but roughly 1,500: municipal utilities that hold the customer relationships of the German energy system, the largest of them, in Cologne and Munich, the size of mid-cap utilities.",
+          bet: "Proximity. Around two thirds of electricity and gas retail and 91 percent of heat, the sector where the transition is hardest and local trust matters most.",
+          risk: "Thin equity. Municipal owners draw dividends while grids and heat networks need transformation capital; a structural financing problem, and a large advisory market.",
+          tiles: [
+            { label: "VKU member companies", value: "1,592", unit: "" },
+            { label: "Sector revenue, 2022", value: "€194", unit: "bn" },
+            { label: "Employees", value: "≈309", unit: "k" },
+            { label: "Heat market share", value: "91", unit: "%" },
+          ],
+          srcNote: "Figures: VKU statistics (2022) and trade reporting on retail market shares.",
+        },
+      },
+    },
     sim: {
-      kicker: "04 · An interactive load model",
+      kicker: "05 · An interactive load model",
       title: "How much new load hits the grid by 2030?",
       lede: "How much additional peak load reaches German distribution grids by 2030, and roughly what does absorbing it cost? Move the levers or pick a scenario. Every coefficient is documented in the model card below. The model is deliberately simple; its purpose is to show which lever dominates, not to forecast.",
       scenarios: "Scenarios",
@@ -166,7 +283,7 @@
       modelCardBody: "<p><strong>Peak load.</strong> <code>ΔP = N_EV · 11 kW · g_EV + N_HP · 2.8 kW · g_HP + P_DC · 0.9</code>. The coincidence factor for electric cars is g_EV = 0.20 for uncontrolled home charging, reduced by up to 60 percent as the managed share rises (smart charging; Consentec 2020, Probst 2014). The electrical design load of a heat pump is about 2.8 kW (air to water, including auxiliary heating; ZVEI 2023), with g_HP = 0.75 in a cold spell, reducible by up to 40 percent through §14a control. The law guarantees a minimum of 4.2 kW, so this flexibility is bounded. Data centres run nearly flat, with a load factor of 0.9.</p><p><strong>Energy.</strong> An electric car needs about 2.5 MWh a year (roughly 14,000 km at 18 kWh per 100 km). A heat pump needs about 4.5 MWh a year (typical values from BWP). Data centres are assumed at 0.8 utilisation across 8,760 hours.</p><p><strong>Investment proxy.</strong> About 2.8 billion euros per GW of added coincident peak, derived from the BDEW and ZVEI estimate of 323 billion euros of distribution grid investment to 2045, spread across the load and generation it has to integrate. This is an order of magnitude, not a price: actual cost depends on local headroom, on simultaneity with solar feed-in, and on how much reinforcement digital operation avoids.</p><p><strong>Limits.</strong> The model is static, national and linear. It has no regional resolution, no solar feed-in peaks (which are what actually size many rural grids), and no price feedback. It answers one question honestly: which lever moves the number.</p>",
     },
     plays: {
-      kicker: "05 · What follows",
+      kicker: "06 · What follows",
       title: "Four questions, four answers",
       lede: "What I would argue to a management board, with the caveat that an outside analyst always sees less than the people in the room. Each recommendation answers a measured problem from the sections above and names the indicators I would track.",
       items: [
@@ -197,14 +314,14 @@
       ],
     },
     method: {
-      kicker: "06 · Method",
+      kicker: "07 · Method",
       title: "How this study was built",
       lede: "Built the way I believe an analysis should be: every figure traceable to a primary source, every derived statistic reproducible from code, every model assumption written down.",
       prose: "<p>All quantitative claims trace to the source register below. Wherever possible I used primary publishers: Bundesnetzagentur and SMARD, Fraunhofer ISE, Agora Energiewende, BDEW, KBA, KfW, and company reporting. Derived statistics, such as the trend against the 80 percent target, the correlation between solar capacity and negative price hours, and cumulative congestion costs, are computed in the repository's <a href='https://github.com/JeelSwami/energiewende-decoded/tree/main/analysis' target='_blank' rel='noopener'>Python analysis layer</a>. The datasets ship as CSV files with a data dictionary that also records where sources disagree. Where figures for 2026 were not yet published, the latest full year values are used and labelled as such.</p><p>The site itself is plain HTML, CSS and JavaScript. The charts are hand-written SVG with keyboard navigation and a table view for every figure, and the colour system is validated for colour vision deficiency in both light and dark mode. This work is free to use for study and research with attribution; commercial use requires my permission, and the underlying data remains the property of its original publishers.</p>",
       sourcesTitle: "Source register",
     },
     faq: {
-      kicker: "07 · Questions researchers ask",
+      kicker: "08 · Questions researchers ask",
       title: "A short FAQ",
       lede: "Questions I have been asked, or asked myself, while compiling this study. If yours is missing, write to me.",
       items: [
@@ -239,12 +356,12 @@
       ],
     },
     ack: {
-      kicker: "08 · Acknowledgements",
+      kicker: "09 · Acknowledgements",
       title: "Credit where it is due",
       body: "<p>This study stands on the public work of the institutions that measure Germany's energy system and publish what they find. For data and analyses I thank the <strong>Bundesnetzagentur</strong> and its SMARD platform, <strong>Fraunhofer ISE</strong> and the Energy-Charts team, <strong>Agora Energiewende</strong>, <strong>BDEW</strong>, the <strong>Bundesverband Wärmepumpe</strong>, the <strong>Kraftfahrt-Bundesamt</strong>, the <strong>FfE</strong> in Munich, <strong>AGEE-Stat</strong> at the BMWK, the <strong>Umweltbundesamt</strong>, and <strong>KfW Research</strong> together with <strong>PwC</strong>.</p><p>The load model's coefficients rest on work by <strong>Consentec</strong>, the <strong>ZVEI</strong>, and the dissertation of <strong>A. Probst</strong> at the University of Stuttgart. Company information comes from <strong>E.ON SE</strong> investor relations, <strong>envelio</strong>, <strong>Eurelectric</strong> and <strong>CyrusOne</strong>; sector studies from <strong>Roland Berger</strong>, <strong>BCG</strong> and <strong>McKinsey</strong>. Where primary documents were paywalled or not yet published, the reporting of <strong>Clean Energy Wire</strong>, <strong>pv magazine</strong>, <strong>ESS News</strong>, <strong>ZfK</strong> and <strong>Tagesspiegel Background</strong> filled the gaps.</p><p>Any errors of compilation or interpretation are mine alone.</p>",
     },
     about: {
-      kicker: "09 · About",
+      kicker: "10 · About",
       title: "About the author",
       name: "Jeel Swami",
       p1: "I am a physicist working in data science, on my way into the energy field. The problems that hold my attention are the ones where regulation, engineering and capital meet, and the German power grid is exactly such a problem.",
@@ -357,6 +474,7 @@
     nav: {
       transition: "Die Wende",
       bottleneck: "Der Engpass",
+      players: "Die Akteure",
       eon: "E.ON im Detail",
       simulator: "Lastmodell",
       plays: "Was folgt",
@@ -399,9 +517,9 @@
       prose: "<p>Ende 2025 überstiegen die Netzanschlussbegehren für Großbatteriespeicher bundesweit <strong>500 GW</strong>. Eine BDEW-Abfrage bei vier Übertragungs- und 17 großen Verteilnetzbetreibern zählte mehr als <strong>720 GW</strong>. Die Jahreshöchstlast liegt bei rund 80 GW, tatsächlich in Betrieb waren nur etwa 2,5 GW Großspeicher. Der größte Teil der Warteschlange besteht aus spekulativen Optionen, nicht aus Projekten, und dahinter wartet reale, finanzierbare Last: Allein bei der E.ON-Tochter Mitnetz Strom summieren sich 90 Rechenzentrums-Anfragen auf <strong>16,8 GW</strong>.</p><p>Die Auswege sind bekannt und umstritten. Ein Reifegradverfahren für die Warteschlange, der neue NEST-Regulierungsrahmen der Bundesnetzagentur vom Dezember 2025, ein Bundeszuschuss von 6,5 Milliarden Euro, der die Übertragungsnetzentgelte 2026 um rund 57 Prozent senkt, und die Debatte über ein Amortisationskonto, das die Netzkosten über Jahrzehnte streckt. Jeder dieser Punkte ist eine offene Baustelle, auf der sorgfältige Analyse knapp ist. Genau das macht diese Ecke der Branche so interessant.</p>",
     },
     eon: {
-      kicker: "03 · Unternehmensanalyse",
+      kicker: "04 · Das Fallbeispiel",
       title: "E.ON: das klarste Investment in das Netz-Jahrzehnt",
-      lede: "Seit dem 2020 vollzogenen Asset-Tausch mit RWE betreibt E.ON Netze und Vertrieb und keine Großerzeugung mehr. Europas größter Verteilnetzbetreiber und Energievertrieb ist damit faktisch eine Wette darauf, dass Deutschland sein Netzproblem löst. Die Zahlen für 2025 sprechen dafür, dass die Wette aufgeht. Die Engpässe erklären, warum sie trotzdem Unterstützung braucht.",
+      lede: "Seit dem 2020 vollzogenen Asset-Tausch mit RWE betreibt E.ON Netze und Vertrieb und keine Großerzeugung mehr. Europas größter Verteilnetzbetreiber und Energievertrieb ist damit faktisch eine Wette darauf, dass Deutschland sein Netzproblem löst. Die Zahlen für 2025 sprechen dafür, dass die Wette aufgeht. Die Engpässe erklären, warum sie trotzdem Unterstützung braucht. E.ON dient in dieser Studie als Fallbeispiel, weil das Unternehmen das reinste Investment in das Netz-Jahrzehnt ist; der Abschnitt darüber zeigt, wie dieselben Fragen bei den anderen Modellen ankommen.",
       prose: "<p><strong>Was könnte die Maschine stoppen?</strong> Vier Dinge. Die regulatorische Verzinsung, falls der NEST-Rahmen Eigenkapital zu knapp vergütet. Die Warteschlange, weil Anschlusschaos Ingenieurkapazität und politisches Kapital bindet. Die Finanzierung, weil 48 Milliarden Euro in fünf Jahren auf eine Branche treffen, deren Finanzierungslücke KfW und PwC auf 346 Milliarden Euro beziffern. Und die Kommodifizierung des Vertriebs, weil verpflichtende dynamische Tarife die Servicekosten je Kunde zur entscheidenden Größe machen, nicht die Marke. Jeder dieser Engpässe führt zu einer der Fragen im nächsten Abschnitt.</p>",
       insights: [
         {
@@ -418,8 +536,103 @@
         },
       ],
     },
+    players: {
+      kicker: "03 · Die Akteure",
+      title: "Vier Geschäftsmodelle, eine Wende",
+      lede: "Der 2020 vollzogene Asset-Tausch zwischen E.ON und RWE hat die beiden früheren Riesen entlang der Wertschöpfungskette geteilt. EnBW blieb integriert, Vattenfall verkleinerte seinen deutschen Fußabdruck, und rund 1.500 Stadtwerke behielten die Kundenbeziehungen. Dieselben politischen Schocks treffen jedes Modell anders, und genau das macht den Vergleich lehrreich. Wählen Sie ein Unternehmen; jede Zahl stammt aus öffentlicher Berichterstattung.",
+      selectorLabel: "Unternehmen wählen",
+      labels: { model: "Geschäftsmodell", bet: "Die Wette", risk: "Das Hauptrisiko" },
+      note: "Zur Vergleichbarkeit: EBITDA-Werte sind das jeweils selbst definierte bereinigte EBITDA für das Geschäftsjahr 2025; Investitionswerte sind die berichteten Bruttoinvestitionen 2025. Vattenfall berichtet auf Konzernebene in schwedischen Kronen und veröffentlicht keine separaten Deutschland-Summen, und die Stadtwerke sind eigenständige Unternehmen; beide werden in den Euro-Vergleichen daher weggelassen statt geschätzt. Unternehmensnamen dienen nur der Identifikation; diese Studie ist von allen genannten Unternehmen unabhängig und verwendet keine Logos oder Markenzeichen.",
+      compare: {
+        ebitdaTitle: "Gleiches Jahr, verschiedene Maschinen",
+        ebitdaSub: "Bereinigtes EBITDA, Geschäftsjahr 2025, Milliarden Euro",
+        ebitdaNote: "Quelle: Unternehmensberichterstattung zum Geschäftsjahr 2025. Bereinigtes EBITDA nach jeweils eigener Definition.",
+        investTitle: "Wer 2025 wie viel investiert hat",
+        investSub: "Berichtete Bruttoinvestitionen, Milliarden Euro",
+        investNote: "Quelle: Unternehmensberichterstattung zum Geschäftsjahr 2025. Der RWE-Wert ist die Bruttoinvestition vor Verkäufen und Farm-downs.",
+      },
+      charts: {
+        eonTitle: "Bereinigtes EBITDA nach Segment, 2025, Milliarden Euro",
+        rweTitle: "RWE, berichtete Ergebnisse, Milliarden Euro",
+        rweEbitda: "Bereinigtes EBITDA",
+        rweNi: "Bereinigter Konzernüberschuss",
+        enbwTitle: "EnBW, bereinigtes EBITDA, Milliarden Euro",
+        enbwActual: "Berichtet",
+        enbwTarget: "Ambition 2030, Mittelwert",
+        swTitle: "Stadtwerke, Marktanteile im Vertrieb, Prozent",
+        heat: "Wärme",
+        electricity: "Strom",
+        gas: "Gas",
+      },
+      companies: {
+        eon: {
+          name: "E.ON",
+          model: "Regulierte Verteilnetze und Energievertrieb in Europa, ohne eigene Großerzeugung. Europas größter Verteilnetzbetreiber, im nächsten Abschnitt im Detail betrachtet.",
+          bet: "Dass sich regulierte Netzinvestitionen verzinsen: 48 Milliarden Euro geplante Investitionen für 2026 bis 2030, mit dem Ziel von rund 13 Milliarden Euro EBITDA im Jahr 2030.",
+          risk: "Regulatorische Verzinsung und Finanzierungsspielraum. Die Anschluss-Warteschlange bindet Ingenieurkapazität und politisches Kapital.",
+          tiles: [
+            { label: "Bereinigtes EBITDA 2025", value: "9,8", unit: "Mrd. €", delta: "+9 % gegenüber 2024" },
+            { label: "Investitionen 2025", value: "8,5", unit: "Mrd. €" },
+            { label: "Vertriebskunden", value: "46,8", unit: "Mio." },
+            { label: "Netz in Deutschland", value: "700 Tsd.", unit: "km" },
+          ],
+          srcNote: "Zahlen: E.ON Jahresergebnis 2025 (EQS/Investegate, März 2026).",
+        },
+        rwe: {
+          name: "RWE",
+          model: "Erzeugung und Handel: Europas drittgrößter Betreiber von Erneuerbaren und die Nummer zwei bei Offshore-Wind, ohne Netze und ohne Massenkundenvertrieb. Die andere Hälfte des Asset-Tauschs von 2020.",
+          bet: "Dass der Bau flexibler Erzeugung und Erneuerbarer mehr einbringt, als er kostet: 35 Milliarden Euro Nettoinvestitionen bis 2031, hin zu einem Portfolio von 65 GW.",
+          risk: "Marktpreisrisiko. Capture-Preise, Negativstunden und Politikwechsel schlagen direkt auf das Ergebnis durch, das von 2024 auf 2025 nachgab.",
+          tiles: [
+            { label: "Bereinigtes EBITDA 2025", value: "5,1", unit: "Mrd. €", delta: "5,7 im Jahr 2024" },
+            { label: "Bereinigter Überschuss 2025", value: "1,8", unit: "Mrd. €", delta: "2,3 im Jahr 2024" },
+            { label: "Bruttoinvestitionen 2025", value: "11", unit: "Mrd. €" },
+            { label: "Portfolioziel 2031", value: "65", unit: "GW" },
+          ],
+          srcNote: "Zahlen: RWE Jahresberichterstattung 2025 und Investorenkommunikation.",
+        },
+        enbw: {
+          name: "EnBW",
+          model: "Die integrierte Ausnahme: Übertragungsnetz (TransnetBW), Verteilnetze (Netze BW), Erzeugung und Vertrieb unter einem weitgehend öffentlichen Dach.",
+          bet: "Dass sich Integration durch die Wende trägt: Rekord-Bruttoinvestitionen von 7,6 Milliarden Euro im Jahr 2025, davon 87 Prozent in Wachstum, hin zu einer EBITDA-Ambition von 5,8 bis 6,6 Milliarden Euro für 2030.",
+          risk: "Die Eigenkapitalgrenze. Für das Programm war bereits eine Kapitalerhöhung von rund 3,1 Milliarden Euro nötig.",
+          tiles: [
+            { label: "Bereinigtes EBITDA 2025", value: "5,1", unit: "Mrd. €", delta: "+3 % gegenüber 2024" },
+            { label: "EBITDA Netzsegment", value: "≈2,7", unit: "Mrd. €", delta: "+20 % gegenüber 2024" },
+            { label: "Bruttoinvestitionen 2025", value: "7,6", unit: "Mrd. €", delta: "+22 % gegenüber 2024" },
+            { label: "Kapitalerhöhung", value: "≈3,1", unit: "Mrd. €" },
+          ],
+          srcNote: "Zahlen: EnBW Geschäftsjahr 2025. Die Ambition von 5,8 bis 6,6 Milliarden Euro für 2030 ist mit ihrem Mittelwert dargestellt.",
+        },
+        vattenfall: {
+          name: "Vattenfall · Deutschland",
+          model: "Der fokussierte Gast: im Eigentum des schwedischen Staates, in Deutschland nach dem Verkauf des Berliner Wärmegeschäfts an das Land Berlin 2024 nur noch Erneuerbare und Vertrieb.",
+          bet: "Dass Offshore-Wind und zwei Vertriebshochburgen das Deutschlandgeschäft tragen: über 5 Milliarden Euro Investitionen in Deutschland bis 2028, mit der Anfang 2025 beschlossenen Errichtung der 1,6-GW-Windparks Nordlicht.",
+          risk: "Konzentration. Nach dem Wärme-Ausstieg ruht der deutsche Fußabdruck auf wenigen Großprojekten und den Vertriebsbeständen in Berlin und Hamburg.",
+          tiles: [
+            { label: "Investitionen in Deutschland bis 2028", value: ">5", unit: "Mrd. €" },
+            { label: "Nordlicht 1 und 2, beschlossen 2025", value: "1,6", unit: "GW" },
+            { label: "Verkauf Berliner Wärme, 2024", value: "≈1,4", unit: "Mrd. €" },
+          ],
+          srcNote: "Zahlen: Vattenfall-Pressemitteilungen 2024 und 2025. Konzernergebnisse werden in schwedischen Kronen berichtet, daher hier kein Euro-Diagramm.",
+        },
+        stadtwerke: {
+          name: "Stadtwerke",
+          model: "Kein einzelnes Unternehmen, sondern rund 1.500: kommunale Versorger, die die Kundenbeziehungen des deutschen Energiesystems halten; die größten, in Köln und München, haben die Größe mittlerer Versorger.",
+          bet: "Nähe. Rund zwei Drittel des Strom- und Gasvertriebs und 91 Prozent der Wärme, also des Sektors, in dem die Wende am schwersten ist und lokales Vertrauen am meisten zählt.",
+          risk: "Dünnes Eigenkapital. Kommunale Eigentümer entnehmen Dividenden, während Netze und Wärmenetze Transformationskapital brauchen; ein strukturelles Finanzierungsproblem, und ein großer Beratungsmarkt.",
+          tiles: [
+            { label: "VKU-Mitgliedsunternehmen", value: "1.592", unit: "" },
+            { label: "Branchenumsatz 2022", value: "194", unit: "Mrd. €" },
+            { label: "Beschäftigte", value: "≈309", unit: "Tsd." },
+            { label: "Marktanteil Wärme", value: "91", unit: "%" },
+          ],
+          srcNote: "Zahlen: VKU-Statistik (2022) und Fachberichterstattung zu Marktanteilen im Vertrieb.",
+        },
+      },
+    },
     sim: {
-      kicker: "04 · Ein interaktives Lastmodell",
+      kicker: "05 · Ein interaktives Lastmodell",
       title: "Wie viel neue Last trifft das Netz bis 2030?",
       lede: "Wie viel zusätzliche Spitzenlast erreicht die deutschen Verteilnetze bis 2030, und was kostet es ungefähr, sie aufzunehmen? Bewegen Sie die Regler oder wählen Sie ein Szenario. Jeder Koeffizient ist in der Modellkarte dokumentiert. Das Modell ist bewusst einfach; sein Zweck ist zu zeigen, welcher Hebel dominiert, nicht zu prognostizieren.",
       scenarios: "Szenarien",
@@ -443,7 +656,7 @@
       modelCardBody: "<p><strong>Spitzenlast.</strong> <code>ΔP = N_EV · 11 kW · g_EV + N_WP · 2,8 kW · g_WP + P_RZ · 0,9</code>. Der Gleichzeitigkeitsfaktor für E-Autos beträgt g_EV = 0,20 bei ungesteuertem Heimladen und sinkt mit steigendem Steuerungsanteil um bis zu 60 Prozent (gesteuertes Laden; Consentec 2020, Probst 2014). Die elektrische Auslegungsleistung einer Wärmepumpe liegt bei etwa 2,8 kW (Luft-Wasser, inklusive Zusatzheizung; ZVEI 2023), mit g_WP = 0,75 bei Kältewelle, per §14a-Steuerung um bis zu 40 Prozent reduzierbar. Das Gesetz garantiert eine Mindestleistung von 4,2 kW, die Flexibilität ist also begrenzt. Rechenzentren laufen nahezu konstant, mit einem Lastfaktor von 0,9.</p><p><strong>Energie.</strong> Ein E-Auto braucht etwa 2,5 MWh pro Jahr (rund 14.000 km bei 18 kWh je 100 km). Eine Wärmepumpe braucht etwa 4,5 MWh pro Jahr (Richtwerte des BWP). Rechenzentren sind mit 0,8 Auslastung über 8.760 Stunden angesetzt.</p><p><strong>Investitions-Näherung.</strong> Etwa 2,8 Milliarden Euro je GW zusätzlicher gleichzeitiger Spitzenlast, abgeleitet aus der BDEW/ZVEI-Schätzung von 323 Milliarden Euro Verteilnetz-Investitionsbedarf bis 2045, verteilt auf die zu integrierende Last und Erzeugung. Das ist eine Größenordnung, kein Preis: Die tatsächlichen Kosten hängen von lokalen Reserven, der Gleichzeitigkeit mit der Solareinspeisung und dem durch digitale Betriebsführung vermiedenen Ausbau ab.</p><p><strong>Grenzen.</strong> Das Modell ist statisch, national und linear. Es kennt keine regionale Auflösung, keine Solareinspeisespitzen (die viele ländliche Netze tatsächlich dimensionieren) und keine Preisrückkopplung. Es beantwortet ehrlich genau eine Frage: welcher Hebel die Zahl bewegt.</p>",
     },
     plays: {
-      kicker: "05 · Was folgt",
+      kicker: "06 · Was folgt",
       title: "Vier Fragen, vier Antworten",
       lede: "Was ich einem Vorstand vortragen würde, mit dem Vorbehalt, dass ein externer Analyst immer weniger sieht als die Menschen im Raum. Jede Empfehlung beantwortet ein gemessenes Problem aus den vorigen Abschnitten und benennt die Kennzahlen, die ich verfolgen würde.",
       items: [
@@ -474,14 +687,14 @@
       ],
     },
     method: {
-      kicker: "06 · Methodik",
+      kicker: "07 · Methodik",
       title: "Wie diese Studie entstanden ist",
       lede: "Gebaut, wie eine Analyse meiner Überzeugung nach gebaut sein sollte: jede Zahl auf eine Primärquelle zurückführbar, jede abgeleitete Statistik aus Code reproduzierbar, jede Modellannahme offengelegt.",
       prose: "<p>Alle quantitativen Aussagen führen auf das Quellenverzeichnis unten zurück. Wo immer möglich habe ich Primärquellen verwendet: Bundesnetzagentur und SMARD, Fraunhofer ISE, Agora Energiewende, BDEW, KBA, KfW und Unternehmensberichte. Abgeleitete Statistiken, etwa der Trend gegen das 80-Prozent-Ziel, die Korrelation zwischen Solarleistung und Negativpreis-Stunden und die kumulierten Redispatch-Kosten, werden in der <a href='https://github.com/JeelSwami/energiewende-decoded/tree/main/analysis' target='_blank' rel='noopener'>Python-Analyseschicht</a> des Repositories berechnet. Die Datensätze liegen als CSV-Dateien mit einem Datenwörterbuch bei, das auch festhält, wo Quellen voneinander abweichen. Wo Zahlen für 2026 noch nicht veröffentlicht waren, werden die letzten Ganzjahreswerte verwendet und entsprechend gekennzeichnet.</p><p>Die Seite selbst besteht aus reinem HTML, CSS und JavaScript. Die Diagramme sind von Hand geschriebenes SVG mit Tastaturnavigation und einer Tabellenansicht für jede Abbildung, und das Farbsystem ist für Farbfehlsichtigkeit in Hell- und Dunkelmodus geprüft. Diese Arbeit ist für Studium und Forschung mit Namensnennung frei nutzbar; kommerzielle Nutzung erfordert meine Zustimmung, und die zugrunde liegenden Daten bleiben Eigentum ihrer ursprünglichen Herausgeber.</p>",
       sourcesTitle: "Quellenverzeichnis",
     },
     faq: {
-      kicker: "07 · Fragen aus der Forschung",
+      kicker: "08 · Fragen aus der Forschung",
       title: "Ein kurzes FAQ",
       lede: "Fragen, die mir beim Erstellen dieser Studie gestellt wurden oder die ich mir selbst gestellt habe. Fehlt Ihre, schreiben Sie mir.",
       items: [
@@ -516,12 +729,12 @@
       ],
     },
     ack: {
-      kicker: "08 · Danksagung",
+      kicker: "09 · Danksagung",
       title: "Anerkennung, wo sie hingehört",
       body: "<p>Diese Studie steht auf der öffentlichen Arbeit der Institutionen, die das deutsche Energiesystem vermessen und ihre Ergebnisse veröffentlichen. Für Daten und Analysen danke ich der <strong>Bundesnetzagentur</strong> und ihrer Plattform SMARD, dem <strong>Fraunhofer ISE</strong> und dem Energy-Charts-Team, <strong>Agora Energiewende</strong>, dem <strong>BDEW</strong>, dem <strong>Bundesverband Wärmepumpe</strong>, dem <strong>Kraftfahrt-Bundesamt</strong>, der <strong>FfE</strong> in München, <strong>AGEE-Stat</strong> beim BMWK, dem <strong>Umweltbundesamt</strong> sowie <strong>KfW Research</strong> und <strong>PwC</strong>.</p><p>Die Koeffizienten des Lastmodells beruhen auf Arbeiten von <strong>Consentec</strong>, dem <strong>ZVEI</strong> und der Dissertation von <strong>A. Probst</strong> an der Universität Stuttgart. Unternehmensinformationen stammen von der Investor-Relations-Seite der <strong>E.ON SE</strong>, von <strong>envelio</strong>, <strong>Eurelectric</strong> und <strong>CyrusOne</strong>; Branchenstudien von <strong>Roland Berger</strong>, <strong>BCG</strong> und <strong>McKinsey</strong>. Wo Primärdokumente hinter Bezahlschranken lagen oder noch nicht erschienen waren, haben die Berichte von <strong>Clean Energy Wire</strong>, <strong>pv magazine</strong>, <strong>ESS News</strong>, <strong>ZfK</strong> und <strong>Tagesspiegel Background</strong> die Lücken gefüllt.</p><p>Fehler in Zusammenstellung oder Interpretation gehen allein auf mich.</p>",
     },
     about: {
-      kicker: "09 · Über mich",
+      kicker: "10 · Über mich",
       title: "Über den Autor",
       name: "Jeel Swami",
       p1: "Ich bin Physiker und arbeite in der Datenanalyse, auf dem Weg in die Energiewirtschaft. Mich halten die Probleme fest, in denen Regulierung, Technik und Kapital aufeinandertreffen, und das deutsche Stromnetz ist genau so ein Problem.",
@@ -807,7 +1020,104 @@
       },
     });
 
+    specs.push({
+      id: "chart-peer-ebitda",
+      titleKey: "players.compare.ebitdaTitle",
+      subKey: "players.compare.ebitdaSub",
+      noteKey: "players.compare.ebitdaNote",
+      render: h.hbars({
+        items: D.peers.ebitda2025.map((d) => ({ label: d.name, value: d.v, colorIdx: 0, note: "EBITDA" })),
+        unit: t("sim.out.capexUnit"), dec: 1,
+        ariaLabel: t("players.compare.ebitdaTitle"),
+      }),
+      table: {
+        headers: ["", t("sim.out.capexUnit")],
+        rows: D.peers.ebitda2025.map((d) => [d.name, h.fmt(d.v, 1)]),
+      },
+    });
+
+    specs.push({
+      id: "chart-peer-invest",
+      titleKey: "players.compare.investTitle",
+      subKey: "players.compare.investSub",
+      noteKey: "players.compare.investNote",
+      render: h.hbars({
+        items: D.peers.invest2025.map((d) => ({ label: d.name, value: d.v, colorIdx: 0, note: "" })),
+        unit: t("sim.out.capexUnit"), dec: 1,
+        ariaLabel: t("players.compare.investTitle"),
+      }),
+      table: {
+        headers: ["", t("sim.out.capexUnit")],
+        rows: D.peers.invest2025.map((d) => [d.name, h.fmt(d.v, 1)]),
+      },
+    });
+
     return specs;
+  }
+
+  /* ---------------- company panels ---------------- */
+
+  function players(h) {
+    const t = h.t;
+    const ids = ["eon", "rwe", "enbw", "vattenfall", "stadtwerke"];
+    const charts = {
+      eon: {
+        title: t("players.charts.eonTitle"),
+        render: h.hbars({
+          items: D.eonSegments.map((s) => ({ label: t("charts.eonSegments." + s.key), value: s.ebitda, colorIdx: 0, note: "EBITDA" })),
+          unit: t("sim.out.capexUnit"), dec: 2,
+          ariaLabel: t("players.charts.eonTitle"),
+        }),
+      },
+      rwe: {
+        title: t("players.charts.rweTitle"),
+        render: h.columns({
+          labels: D.peers.rwe.years,
+          series: [
+            { name: t("players.charts.rweEbitda"), values: D.peers.rwe.ebitda, colorIdx: 0 },
+            { name: t("players.charts.rweNi"), values: D.peers.rwe.ni, colorIdx: 1 },
+          ],
+          unit: t("sim.out.capexUnit"), dec: 1,
+          ariaLabel: t("players.charts.rweTitle"),
+        }),
+      },
+      enbw: {
+        title: t("players.charts.enbwTitle"),
+        render: h.columns({
+          labels: D.peers.enbw.labels,
+          series: [
+            { name: t("players.charts.enbwActual"), values: D.peers.enbw.actual, colorIdx: 0 },
+            { name: t("players.charts.enbwTarget"), values: D.peers.enbw.target, colorIdx: 2 },
+          ],
+          unit: t("sim.out.capexUnit"), dec: 1,
+          ariaLabel: t("players.charts.enbwTitle"),
+        }),
+      },
+      vattenfall: null,
+      stadtwerke: {
+        title: t("players.charts.swTitle"),
+        render: h.hbars({
+          items: D.peers.sw.map((d) => ({ label: t("players.charts." + d.key), value: d.v, colorIdx: 0, note: "" })),
+          unit: "%", dec: 0, maxVal: 100,
+          ariaLabel: t("players.charts.swTitle"),
+        }),
+      },
+    };
+    return {
+      companies: ids.map((id) => {
+        const c = t("players.companies." + id);
+        return {
+          id,
+          name: c.name,
+          model: c.model,
+          bet: c.bet,
+          risk: c.risk,
+          tiles: c.tiles,
+          srcNote: c.srcNote,
+          chart: charts[id],
+        };
+      }),
+    };
   }
 
   /* ---------------- KPI rows ---------------- */
@@ -873,6 +1183,12 @@
     { name: "Bundesnetzagentur: equity returns on new investments, January 2024", url: "https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/EN/2024/20240124_EKZins.html", desc: { en: "base rate plus 3 percent risk premium on new grid capex", de: "Basiszins plus 3 Prozent Risikoprämie für neue Netzinvestitionen" } },
     { name: "E.ON: full year 2025 results (EQS via Investegate)", url: "https://www.investegate.co.uk/announcement/eqs/e-on-ag--0mpp/eqs-news-e-on-continues-growth-path-in-2025-/9445200", desc: { en: "EBITDA of 9.8 billion euros, segments, the 48 billion plan, dividend", de: "EBITDA 9,8 Mrd. €, Segmente, der 48-Mrd.-Plan, Dividende" } },
     { name: "E.ON: half year 2025 results overview (Investing.com)", url: "https://www.investing.com/news/company-news/eon-h1-2025-slides-13-ebitda-growth-driven-by-network-expansion-guidance-confirmed-93CH-4187088", desc: { en: "targets for 2028, asset base, dividend policy", de: "Ziele 2028, Anlagenbasis, Dividendenpolitik" } },
+    { name: "RWE: full year 2025 results", url: "https://www.renewable-energy-industry.com/countries/article-7294-rwe-at-the-upper-end-of-its-2025-ebitda-and-profit-guidance-eur35-billion-for-wind-power-solar-and-flexible-power-plants-by-2031", desc: { en: "EBITDA 5.1 billion euros; 35 billion of net investment to 2031", de: "EBITDA 5,1 Mrd. €; 35 Mrd. Nettoinvestitionen bis 2031" } },
+    { name: "RWE: half year 2025 press release", url: "https://www.rwe.com/en/press/rwe-ag/2025-08-14-rwe-delivers-a-good-financial-performance-in-the-first-half-of-2025/", desc: { en: "portfolio and investment programme", de: "Portfolio und Investitionsprogramm" } },
+    { name: "EnBW: fiscal year 2025 results", url: "https://www.enbw.com/press/enbw-2025-fiscal-year.html", desc: { en: "EBITDA 5.1 billion euros; record investment of 7.6 billion; capital increase", de: "EBITDA 5,1 Mrd. €; Rekordinvestitionen 7,6 Mrd.; Kapitalerhöhung" } },
+    { name: "Vattenfall: sale of the Berlin heat business", url: "https://group.vattenfall.com/press-and-media/pressreleases/2024/vattenfall-completes-sale-of-its-heat-business-in-germany-to-the-state-of-berlin/", desc: { en: "closed May 2024", de: "vollzogen im Mai 2024" } },
+    { name: "Baltic Wind: Vattenfall's investment in Germany", url: "https://balticwind.eu/vattenfall-bets-on-offshore-and-invests-e5-billion-in-germanys-energy-transition/", desc: { en: "more than 5 billion euros to 2028; Nordlicht 1 and 2", de: "über 5 Mrd. € bis 2028; Nordlicht 1 und 2" } },
+    { name: "VKU and trade reporting: the municipal utilities", url: "https://energiemarie.de/stromanbieter/stadtwerke", desc: { en: "member statistics and retail market shares", de: "Mitgliederstatistik und Marktanteile im Vertrieb" } },
     { name: "envelio: E.ON's digital twin of the German distribution grid", url: "https://envelio.com/insights/eon-digital-twin-german-distribution-grid", desc: { en: "700,000 km, 55 million components, 410,000 requests a year", de: "700.000 km, 55 Mio. Betriebsmittel, 410.000 Anträge pro Jahr" } },
     { name: "Enlit: E.ON reaches one million smart meters", url: "https://www.enlit.world/library/eon-first-energy-company-to-reach-one-million-smart-meters-in-germany", desc: { en: "first German utility past one million smart meters", de: "erster deutscher Versorger über eine Million Smart Meter" } },
     { name: "pv magazine: smart meter rollout passes the 20 percent mark", url: "https://www.pv-magazine.de/2025/12/29/smart-meter-rollout-erreicht-20-prozent-marke-bei-pflichteinbaufaellen/", desc: { en: "Germany-wide rollout status at the end of 2025", de: "bundesweiter Rollout-Stand Ende 2025" } },
@@ -901,5 +1217,5 @@
     { name: "European Commission: merger decision M.8871, E.ON and innogy", url: "https://ec.europa.eu/competition/mergers/cases/decisions/m8871_2573_3.pdf", desc: { en: "the E.ON and RWE asset swap, 2018 to 2020", de: "der Asset-Tausch von E.ON und RWE, 2018 bis 2020" } },
   ];
 
-  window.CONTENT = { i18n: { en, de }, charts, kpiRows, sim, sources };
+  window.CONTENT = { i18n: { en, de }, charts, kpiRows, players, sim, sources };
 })();

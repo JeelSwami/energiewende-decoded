@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Energiewende, decoded: a data study of Germany's energy transition</title>
 <meta name="description" content="An independent, bilingual (EN/DE) data study of Germany's energy transition and what it means for grid and retail utilities such as E.ON, with sourced datasets, interactive charts, a grid load model, and a research FAQ.">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
@@ -16,6 +16,7 @@
     <nav class="top-nav" data-i18n-aria="ui.navLabel">
       <a href="#transition" data-i18n="nav.transition"></a>
       <a href="#bottleneck" data-i18n="nav.bottleneck"></a>
+      <a href="#players" data-i18n="nav.players"></a>
       <a href="#eon" data-i18n="nav.eon"></a>
       <a href="#simulator" data-i18n="nav.simulator"></a>
       <a href="#plays" data-i18n="nav.plays"></a>
@@ -86,7 +87,22 @@
     </div>
   </section>
 
-  <!-- ====================== 3 · E.ON ====================== -->
+  <!-- ====================== 3 · PLAYERS ====================== -->
+  <section class="chapter" id="players">
+    <div class="wrap">
+      <p class="kicker" data-i18n="players.kicker"></p>
+      <h2 data-i18n="players.title"></h2>
+      <p class="lede" data-i18n="players.lede"></p>
+      <div id="players-host"></div>
+      <div class="card-grid two">
+        <div id="chart-peer-ebitda"></div>
+        <div id="chart-peer-invest"></div>
+      </div>
+      <p class="chart-note" data-i18n="players.note"></p>
+    </div>
+  </section>
+
+  <!-- ====================== 4 · E.ON ====================== -->
   <section class="chapter" id="eon">
     <div class="wrap">
       <p class="kicker" data-i18n="eon.kicker"></p>
@@ -197,7 +213,7 @@
   </div>
 </footer>
 
-<script src="content.js?v=5"></script>
-<script src="app.js?v=3"></script>
+<script src="content.js?v=6"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

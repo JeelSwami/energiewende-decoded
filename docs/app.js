@@ -560,6 +560,71 @@
     });
   }
 
+  /* ---------------- company selector ---------------- */
+
+  let playerSel = null;
+
+  function renderPlayers() {
+    const host = document.getElementById("players-host");
+    if (!host || typeof C.players !== "function") return;
+    const P = C.players(chartHelpers);
+    if (!P.companies.length) return;
+    if (!playerSel || !P.companies.some((c) => c.id === playerSel)) playerSel = P.companies[0].id;
+    host.textContent = "";
+
+    const row = el("div", { class: "selector-row", role: "group", "aria-label": t("players.selectorLabel") });
+    P.companies.forEach((c) => {
+      const b = el("button", { type: "button", "aria-pressed": String(c.id === playerSel), text: c.name });
+      b.addEventListener("click", () => { playerSel = c.id; renderPlayers(); });
+      row.appendChild(b);
+    });
+    host.appendChild(row);
+
+    const c = P.companies.find((cc) => cc.id === playerSel);
+    const panel = el("div", { class: "player-panel" });
+
+    const facts = el("div", { class: "player-facts" });
+    [["model", c.model], ["bet", c.bet], ["risk", c.risk]].forEach(([key, text]) => {
+      const facet = el("div", { class: "facet" });
+      facet.appendChild(el("h4", { text: t("players.labels." + key) }));
+      const p = el("p");
+      p.innerHTML = text;
+      facet.appendChild(p);
+      facts.appendChild(facet);
+    });
+    const src = el("p", { class: "player-src", text: c.srcNote });
+    facts.appendChild(src);
+    panel.appendChild(facts);
+
+    const side = el("div", { class: "player-side" });
+    const tiles = el("div", { class: "kpi-row" });
+    side.appendChild(tiles);
+    panel.appendChild(side);
+    host.appendChild(panel);
+
+    c.tiles.forEach((tile) => {
+      const div = el("div", { class: "stat-tile" });
+      div.appendChild(el("p", { class: "label", text: tile.label }));
+      const val = el("p", { class: "value" });
+      val.textContent = tile.value;
+      if (tile.unit) val.appendChild(el("small", { text: tile.unit }));
+      div.appendChild(val);
+      if (tile.delta) div.appendChild(el("p", { class: "delta", text: tile.delta }));
+      tiles.appendChild(div);
+    });
+
+    if (c.chart) {
+      const wrap = el("div", { class: "player-chart" });
+      wrap.appendChild(el("h5", { text: c.chart.title }));
+      const fig = el("figure", { role: "group", "aria-label": c.chart.title });
+      const box = el("div", { class: "chart-box" });
+      fig.appendChild(box);
+      wrap.appendChild(fig);
+      side.appendChild(wrap);
+      c.chart.render(box, fig);
+    }
+  }
+
   /* ---------------- FAQ ---------------- */
 
   function renderFaq() {
@@ -603,6 +668,7 @@
     renderCharts();
     renderInsights();
     renderRecos();
+    renderPlayers();
     renderFaq();
     renderSources();
     simInit();
