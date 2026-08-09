@@ -1,0 +1,21 @@
+metric,segment_or_year,value,unit,source
+adjusted_ebitda,group_2025,9.8,EUR bn,E.ON FY2025 results (EQS/Investegate 2026-03)
+adjusted_ebitda,group_2024,9.0,EUR bn,E.ON FY2025 results (+9 pct YoY implies 2024 base)
+adjusted_ebitda,networks_2025,7.7,EUR bn,E.ON FY2025 results
+adjusted_ebitda,retail_2025,1.7,EUR bn,E.ON FY2025 results
+adjusted_ebitda,infrastructure_solutions_2025,0.59,EUR bn,E.ON FY2025 results
+adjusted_net_income,group_2025,3.0,EUR bn,E.ON FY2025 results
+investment,group_2025,8.5,EUR bn,E.ON FY2025 results
+investment,networks_2025,7.0,EUR bn,E.ON FY2025 results
+investment,retail_2025,0.48,EUR bn,E.ON FY2025 results
+investment,infrastructure_solutions_2025,0.9,EUR bn,E.ON FY2025 results
+investment_plan,group_2026_2030,48,EUR bn,E.ON FY2025 results / CMD
+ebitda_guidance,group_2026,9.5,EUR bn,E.ON 2026 guidance midpoint (9.4-9.6)
+ebitda_target,group_2028,11.3,EUR bn,E.ON targets (greater than)
+ebitda_ambition,group_2030,13.0,EUR bn,E.ON 2030 ambition (approx)
+retail_customers,europe_2025,46.8,millions,E.ON reporting via research synthesis
+employees,group_2025,76.8,thousands,company reporting
+german_grid_length,germany_2025,700000,km,envelio digital-twin case study
+renewables_connected,germany_2025,110,GW,E.ON reporting (2 millionth plant connected)
+smart_meters,germany_2025,1.0,millions,E.ON press release 2026
+dividend,fy2025,0.57,EUR per share,E.ON FY2025 results

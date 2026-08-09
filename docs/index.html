@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energiewende, decoded — a data-driven utility strategy case study</title>
+<meta name="description" content="An independent, bilingual (EN/DE) data-driven case study of Germany's energy transition and what it means for grid-and-retail utilities such as E.ON — with sourced datasets, interactive charts and a grid-stress simulator.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <span class="wordmark"><span class="flag">⚡</span> Energiewende, decoded</span>
+    <nav class="top-nav" data-i18n-aria="ui.navLabel">
+      <a href="#transition" data-i18n="nav.transition"></a>
+      <a href="#bottleneck" data-i18n="nav.bottleneck"></a>
+      <a href="#eon" data-i18n="nav.eon"></a>
+      <a href="#simulator" data-i18n="nav.simulator"></a>
+      <a href="#plays" data-i18n="nav.plays"></a>
+      <a href="#method" data-i18n="nav.method"></a>
+    </nav>
+    <div class="header-controls">
+      <span class="toggle-pill lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+      </span>
+      <button id="theme-toggle" class="icon-btn" type="button" data-i18n-aria="ui.themeToggle">◐</button>
+      <a class="icon-btn" href="https://github.com/JeelSwami/energiewende-decoded" target="_blank" rel="noopener" aria-label="GitHub repository">↗</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ====================== HERO ====================== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker" data-i18n="hero.kicker"></p>
+      <h1 data-i18n="hero.title"></h1>
+      <p class="sub" data-i18n="hero.sub"></p>
+      <div class="hero-badges">
+        <span class="badge" data-i18n="hero.badge1"></span>
+        <span class="badge" data-i18n="hero.badge2"></span>
+        <span class="badge" data-i18n="hero.badge3"></span>
+        <span class="badge" data-i18n="hero.badge4"></span>
+      </div>
+      <div class="kpi-row" id="hero-kpis"></div>
+      <p class="disclaimer-line" data-i18n="hero.disclaimer"></p>
+    </div>
+  </section>
+
+  <!-- ====================== 1 · TRANSITION ====================== -->
+  <section class="chapter" id="transition">
+    <div class="wrap">
+      <p class="kicker" data-i18n="transition.kicker"></p>
+      <h2 data-i18n="transition.title"></h2>
+      <p class="lede" data-i18n="transition.lede"></p>
+      <div id="chart-res-share"></div>
+      <div class="card-grid two">
+        <div id="chart-gen-mix"></div>
+        <div id="chart-capacity"></div>
+      </div>
+      <div class="insight-grid" id="transition-insights"></div>
+    </div>
+  </section>
+
+  <!-- ====================== 2 · BOTTLENECK ====================== -->
+  <section class="chapter" id="bottleneck">
+    <div class="wrap">
+      <p class="kicker" data-i18n="bottleneck.kicker"></p>
+      <h2 data-i18n="bottleneck.title"></h2>
+      <p class="lede" data-i18n="bottleneck.lede"></p>
+      <div class="kpi-row" id="bottleneck-kpis"></div>
+      <div class="card-grid two">
+        <div id="chart-redispatch"></div>
+        <div id="chart-negative-prices"></div>
+      </div>
+      <div class="card-grid two">
+        <div id="chart-heatpumps"></div>
+        <div id="chart-ev"></div>
+      </div>
+      <div class="prose" data-i18n="bottleneck.prose"></div>
+    </div>
+  </section>
+
+  <!-- ====================== 3 · E.ON ====================== -->
+  <section class="chapter" id="eon">
+    <div class="wrap">
+      <p class="kicker" data-i18n="eon.kicker"></p>
+      <h2 data-i18n="eon.title"></h2>
+      <p class="lede" data-i18n="eon.lede"></p>
+      <div class="kpi-row" id="eon-kpis"></div>
+      <div class="card-grid two">
+        <div id="chart-eon-segments"></div>
+        <div id="chart-eon-capex"></div>
+      </div>
+      <div class="prose" data-i18n="eon.prose"></div>
+      <div class="insight-grid" id="eon-insights"></div>
+    </div>
+  </section>
+
+  <!-- ====================== 4 · SIMULATOR ====================== -->
+  <section class="chapter" id="simulator">
+    <div class="wrap">
+      <p class="kicker" data-i18n="sim.kicker"></p>
+      <h2 data-i18n="sim.title"></h2>
+      <p class="lede" data-i18n="sim.lede"></p>
+      <div class="sim-panel">
+        <div class="sim-controls" id="sim-controls"></div>
+        <div class="sim-out">
+          <div class="kpi-row" id="sim-kpis"></div>
+          <div class="sim-bar-block" id="sim-bars"></div>
+          <p class="chart-note" id="sim-takeaway"></p>
+        </div>
+      </div>
+      <details class="model-card">
+        <summary data-i18n="sim.modelCardTitle"></summary>
+        <div class="mc-body" data-i18n="sim.modelCardBody"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ====================== 5 · PLAYS ====================== -->
+  <section class="chapter" id="plays">
+    <div class="wrap">
+      <p class="kicker" data-i18n="plays.kicker"></p>
+      <h2 data-i18n="plays.title"></h2>
+      <p class="lede" data-i18n="plays.lede"></p>
+      <div id="reco-list"></div>
+    </div>
+  </section>
+
+  <!-- ====================== 6 · METHOD ====================== -->
+  <section class="chapter" id="method">
+    <div class="wrap">
+      <p class="kicker" data-i18n="method.kicker"></p>
+      <h2 data-i18n="method.title"></h2>
+      <p class="lede" data-i18n="method.lede"></p>
+      <div class="prose" data-i18n="method.prose"></div>
+      <h2 style="font-size:1.2rem; margin-top:2.5rem" data-i18n="method.sourcesTitle"></h2>
+      <ol class="source-list" id="source-list"></ol>
+    </div>
+  </section>
+
+  <!-- ====================== ABOUT ====================== -->
+  <section class="chapter" id="about">
+    <div class="wrap">
+      <p class="kicker" data-i18n="about.kicker"></p>
+      <h2 data-i18n="about.title"></h2>
+      <div class="about-card">
+        <div>
+          <h3 data-i18n="about.name"></h3>
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p data-i18n="about.p3"></p>
+        </div>
+        <div>
+          <ul>
+            <li data-i18n="about.link1"></li>
+            <li data-i18n="about.link2"></li>
+            <li data-i18n="about.link3"></li>
+            <li data-i18n="about.link4"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span data-i18n="footer.left"></span>
+    <span data-i18n="footer.right"></span>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
