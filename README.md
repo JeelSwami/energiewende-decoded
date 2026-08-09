@@ -1,76 +1,66 @@
 # ⚡ Energiewende, decoded
 
-**A bilingual (EN/DE), data-driven strategy case study of Germany's energy transition — and what it means for a grid-and-retail utility like E.ON.**
+**A bilingual (EN/DE) data study of Germany's energy transition, and what it means for a grid and retail utility like E.ON.**
 
-**Live app → [jeelswami.github.io/energiewende-decoded](https://jeelswami.github.io/energiewende-decoded/)**
+**Live study → [jeelswami.github.io/energiewende-decoded](https://jeelswami.github.io/energiewende-decoded/)**
 
-[![Live demo](https://img.shields.io/badge/demo-GitHub%20Pages-2a78d6)](https://jeelswami.github.io/energiewende-decoded/)
+[![Live study](https://img.shields.io/badge/live-GitHub%20Pages-2a78d6)](https://jeelswami.github.io/energiewende-decoded/)
 [![Language](https://img.shields.io/badge/languages-EN%20%7C%20DE-eb6834)](#)
 [![Python](https://img.shields.io/badge/analysis-Python%20%2B%20pandas-1baf7a)](analysis/)
-[![License](https://img.shields.io/badge/license-MIT-52514e)](LICENSE)
-
----
+[![License](https://img.shields.io/badge/licence-CC%20BY--NC%204.0-52514e)](LICENSE)
 
 ## What this is
 
-Germany is rebuilding its power system in real time: renewables covered a record 55.1% of demand in 2025, yet day-ahead prices went negative for a record 573 hours, congestion management cost €3.1bn that year, and battery-storage projects totalling **more than 500 GW** — several times the national peak load of ~80 GW — are queuing for grid connections. The bottleneck of the Energiewende has moved **from generation to the grid**.
+Germany is rebuilding its power system in real time. In 2025, renewable sources covered a record 55.1 percent of electricity demand. In the same year, wholesale prices were negative for a record 573 hours, congestion management cost 3.1 billion euros, and battery storage projects totalling **more than 500 GW**, several times the national peak load of about 80 GW, stood in grid connection queues. The bottleneck of the Energiewende has moved from generation to the grid.
 
-This repository is an independent consulting-style analysis of that shift, built like I would build a client deliverable:
+I wrote this study to work through that shift the way I was trained to work through a physics problem: start from measured data, state the assumptions, compute what follows, and say honestly what the model cannot tell you. The repository holds four layers:
 
-1. **📊 An interactive web app** ([`docs/`](docs/)) — hand-built SVG data visualizations (no chart libraries), a **grid-stress simulator** with a fully documented model, strategic recommendations, and a complete EN/DE language toggle. Dependency-free, accessible (keyboard navigation, table views for every chart, light/dark mode).
-2. **🗃️ Sourced datasets** ([`data/`](data/)) — every number traced to a primary source: Bundesnetzagentur/SMARD, Fraunhofer ISE, Agora Energiewende, BDEW, KBA, company reports.
-3. **🐍 A reproducible analysis layer** ([`analysis/`](analysis/)) — pandas + matplotlib scripts that derive the statistics quoted in the case study (trend vs. 2030 target, solar build-out vs. negative-price hours, congestion-cost trajectory).
-4. **📄 A written case study** ([`CASE_STUDY.md`](CASE_STUDY.md)) — market context, an E.ON deep dive, and four quantified strategic plays.
+1. **An interactive study** ([`docs/`](docs/)): hand-written SVG charts, a grid load model with a documented model card, a research FAQ, and a complete English and German language toggle. Plain HTML, CSS and JavaScript; no frameworks, no build step. Keyboard navigation, a table view for every chart, and a colour system checked for colour vision deficiency in both light and dark mode.
+2. **Compiled datasets** ([`data/`](data/)): every number traced to its source, with a data dictionary that also records where sources disagree.
+3. **A reproducible analysis layer** ([`analysis/`](analysis/)): pandas and matplotlib code that derives the statistics quoted in the study, among them the finding that reaching the 80 percent target for 2030 requires double the historical pace, and a correlation of r = 0.82 between installed solar capacity and hours of negative prices.
+4. **A written case study** ([`CASE_STUDY.md`](CASE_STUDY.md)): market context, a close look at E.ON, and four strategy questions with quantified answers.
 
-> **Independence note:** This is a personal analysis based exclusively on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. All trademarks belong to their owners.
+> **Independence note.** This is a personal analysis based only on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. All trademarks belong to their owners.
 
 ## Why E.ON as the case
 
-After the 2018–2020 asset swap with RWE, E.ON became Europe's largest distribution system operator and energy retailer — a pure play on exactly the two battlegrounds this analysis covers: **grids** (a €48bn investment programme for 2026–2030, a connection queue of hundreds of GW, a new regulatory framework from the Bundesnetzagentur) and **retail** (mandatory dynamic tariffs, smart-meter rollout, AI-driven customer operations). If you want to understand where the German energy system is going, E.ON's balance sheet is where the theory meets the money.
+After the asset swap with RWE, completed in 2020, E.ON became Europe's largest distribution system operator and energy retailer, with no large-scale generation of its own. That makes it the purest available case for the two questions this study cares about: who finances and builds the grid (E.ON plans 48 billion euros of investment from 2026 to 2030, inside a new regulatory framework and behind a connection queue of hundreds of gigawatts), and what retail becomes when dynamic tariffs, smart meters and §14a flexibility turn households into active parts of the system. Where the German energy transition succeeds or stalls, it does so first on E.ON's balance sheet.
 
-## The four strategic plays (preview)
+## Using this work
 
-| # | Play | The problem it answers |
-|---|------|------------------------|
-| 1 | **Clear the queue** | >500 GW of storage connection requests nationwide crowd out data centers and industry; maturity-gating and transparent hosting-capacity data turn a queue into a pipeline |
-| 2 | **Finance the compounding machine** | Germany's grids need ~€360bn by 2045; utilities can self-fund only a fraction — capital partnerships and regulatory advocacy decide who builds |
-| 3 | **Monetize flexibility at the edge** | 573 negative-price hours in 2025 and §14a EnWG make household flexibility (EVs, heat pumps, batteries) a monetizable asset for the first time |
-| 4 | **Industrialize AI in operations** | Cost-to-serve, grid planning speed, and a skilled-labor shortage of >200,000 workers make AI adoption an infrastructure question, not an IT project |
-
-Full argumentation with sources: [`CASE_STUDY.md`](CASE_STUDY.md) · interactive version: [live app](https://jeelswami.github.io/energiewende-decoded/).
+The study, the compiled datasets and the code are free to use for **study, teaching and research** with attribution to Jeel Swami and a link to this repository. **Commercial use requires my written permission** (jeelswamis@gmail.com). The primary data remains the property of its original publishers, which are credited in [`data/README.md`](data/README.md) and in the study's source register; if you republish that data, credit them, not me. Details in [LICENSE](LICENSE).
 
 ## Repository structure
 
 ```
 energiewende-decoded/
-├── docs/               # Interactive app (GitHub Pages)
-│   ├── index.html      #   structure — all copy rendered from content.js (EN/DE)
-│   ├── styles.css      #   design system: validated palette, light/dark
-│   ├── app.js          #   hand-rolled SVG chart engine + simulator
-│   └── content.js      #   bilingual copy + every dataset with source
-├── data/               # CSV datasets + data dictionary with sources
-├── analysis/           # pandas/matplotlib: derived stats + figures
-├── CASE_STUDY.md       # the written consulting deliverable
-└── README.md
+├── docs/               The interactive study (GitHub Pages)
+│   ├── index.html        structure; all copy renders from content.js (EN/DE)
+│   ├── styles.css        design system: validated palette, light and dark mode
+│   ├── app.js            hand-written SVG chart engine and load model
+│   └── content.js        bilingual copy and every dataset, with sources
+├── data/               CSV datasets and the data dictionary
+├── analysis/           pandas and matplotlib: derived statistics and figures
+├── CASE_STUDY.md       the written study
+└── LICENSE             CC BY-NC 4.0, with a data ownership note
 ```
 
-## Design & engineering choices
-
-- **No dependencies.** Every chart is generated SVG with a small purpose-built engine: crosshair tooltips, keyboard navigation (arrow keys), selective direct labels, and a table-view twin for every chart (WCAG-friendly). No framework, no build step — view source and everything is there.
-- **A validated color system.** The palette's categorical slots are checked for color-vision-deficiency separation (OKLab ΔE) in both light and dark mode; sequential scales are single-hue; text never wears data colors.
-- **Transparent modelling.** The grid-stress simulator's every coefficient (charger power, coincidence factors, heat-pump loads, capex intensity) is documented in an in-app model card with sources — the same standard I'd apply to a client model.
-- **Bilingual by design.** Every string, chart label, and tooltip switches between English and German — because the audience for German energy strategy speaks German.
-
-## Run the analysis
+## Reproducing the analysis
 
 ```bash
 cd analysis
 pip install -r requirements.txt
-python energiewende_analysis.py   # prints derived stats, writes figures/
+python energiewende_analysis.py
 ```
 
-## About me
+The script prints the derived statistics and writes the figures to `analysis/figures/`.
 
-Physics-trained data scientist heading into energy consulting. I like problems where regulation, engineering, and capital meet — which is the German power grid in one sentence. Related work: [EU research-funding dashboard for NRW](https://github.com/JeelSwami/nrw-funding-dashboard) · [materials-informatics ML pipeline](https://github.com/JeelSwami/Materials-Band-Gap-Prediction-ML-) · [German vocabulary trainer I built while working toward C1](https://github.com/JeelSwami/wortschatz-trainer).
+## Acknowledgements
+
+This study stands on the public work of the institutions that measure Germany's energy system: the Bundesnetzagentur and its SMARD platform, Fraunhofer ISE and the Energy-Charts team, Agora Energiewende, BDEW, the Bundesverband Wärmepumpe, the Kraftfahrt-Bundesamt, the FfE in Munich, AGEE-Stat at the BMWK, the Umweltbundesamt, and KfW Research together with PwC. The load model's coefficients rest on work by Consentec, the ZVEI, and the dissertation of A. Probst at the University of Stuttgart. Company information comes from E.ON SE investor relations, envelio, Eurelectric and CyrusOne; sector studies from Roland Berger, BCG and McKinsey; and where primary documents were unavailable, the reporting of Clean Energy Wire, pv magazine, ESS News and ZfK filled the gaps. Any errors of compilation or interpretation are mine alone.
+
+## About the author
+
+I am a physicist working in data science, on my way into the energy field. My earlier work is computational: Monte Carlo simulation of the two-dimensional Ising model, crystal lattice simulations, statistical analysis of radioactive decay data, and a [machine learning pipeline for semiconductor band gaps](https://github.com/JeelSwami/Materials-Band-Gap-Prediction-ML-). I also build open data tools, among them a [dashboard of EU research funding in North Rhine-Westphalia](https://github.com/JeelSwami/nrw-funding-dashboard), and I work in English and German ([the vocabulary trainer I built on the way to C1](https://github.com/JeelSwami/wortschatz-trainer)).
 
 📫 jeelswamis@gmail.com · GitHub [@JeelSwami](https://github.com/JeelSwami)

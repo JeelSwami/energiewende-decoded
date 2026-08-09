@@ -1,5 +1,5 @@
 /* ============================================================
-   Energiewende, decoded — application engine
+   Energiewende, decoded: application engine
    Hand-rolled SVG charts, no dependencies.
    Data + copy live in content.js (window.CONTENT).
    ============================================================ */
@@ -560,6 +560,23 @@
     });
   }
 
+  /* ---------------- FAQ ---------------- */
+
+  function renderFaq() {
+    const host = document.getElementById("faq-list");
+    const items = t("faq.items");
+    if (!host || !Array.isArray(items)) return;
+    host.textContent = "";
+    items.forEach((it) => {
+      const d = el("details", { class: "faq-item" });
+      const s = el("summary", { text: it.q });
+      const a = el("div", { class: "faq-a" });
+      a.innerHTML = it.a;
+      d.appendChild(s); d.appendChild(a);
+      host.appendChild(d);
+    });
+  }
+
   /* ---------------- sources ---------------- */
 
   function renderSources() {
@@ -572,7 +589,7 @@
       a.textContent = s.name;
       li.appendChild(a);
       const span = el("span");
-      span.textContent = " — " + s.desc[lang === "de" ? "de" : "en"];
+      span.textContent = " · " + s.desc[lang === "de" ? "de" : "en"];
       li.appendChild(span);
       host.appendChild(li);
     });
@@ -586,6 +603,7 @@
     renderCharts();
     renderInsights();
     renderRecos();
+    renderFaq();
     renderSources();
     simInit();
   }

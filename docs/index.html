@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Energiewende, decoded — a data-driven utility strategy case study</title>
-<meta name="description" content="An independent, bilingual (EN/DE) data-driven case study of Germany's energy transition and what it means for grid-and-retail utilities such as E.ON — with sourced datasets, interactive charts and a grid-stress simulator.">
-<link rel="stylesheet" href="styles.css">
+<title>Energiewende, decoded: a data study of Germany's energy transition</title>
+<meta name="description" content="An independent, bilingual (EN/DE) data study of Germany's energy transition and what it means for grid and retail utilities such as E.ON, with sourced datasets, interactive charts, a grid load model, and a research FAQ.">
+<link rel="stylesheet" href="styles.css?v=2">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
@@ -20,6 +20,7 @@
       <a href="#simulator" data-i18n="nav.simulator"></a>
       <a href="#plays" data-i18n="nav.plays"></a>
       <a href="#method" data-i18n="nav.method"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
     </nav>
     <div class="header-controls">
       <span class="toggle-pill lang-switch" role="group" aria-label="Language">
@@ -144,6 +145,25 @@
     </div>
   </section>
 
+  <!-- ====================== 7 · FAQ ====================== -->
+  <section class="chapter" id="faq">
+    <div class="wrap">
+      <p class="kicker" data-i18n="faq.kicker"></p>
+      <h2 data-i18n="faq.title"></h2>
+      <p class="lede" data-i18n="faq.lede"></p>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- ====================== 8 · ACKNOWLEDGEMENTS ====================== -->
+  <section class="chapter" id="acknowledgements">
+    <div class="wrap">
+      <p class="kicker" data-i18n="ack.kicker"></p>
+      <h2 data-i18n="ack.title"></h2>
+      <div class="ack-block" data-i18n="ack.body"></div>
+    </div>
+  </section>
+
   <!-- ====================== ABOUT ====================== -->
   <section class="chapter" id="about">
     <div class="wrap">
@@ -177,7 +197,7 @@
   </div>
 </footer>
 
-<script src="content.js"></script>
-<script src="app.js"></script>
+<script src="content.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

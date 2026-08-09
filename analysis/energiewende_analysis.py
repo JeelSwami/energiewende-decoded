@@ -1,4 +1,4 @@
-"""Energiewende, decoded — reproducible analysis layer.
+"""Energiewende, decoded: reproducible analysis layer.
 
 Reads the sourced datasets in ../data and produces the derived statistics
 quoted in the case study, plus publication-quality figures in ./figures.
@@ -96,7 +96,7 @@ def main() -> None:
 
     # ================= figures =================
 
-    # Fig 1 — renewables share vs target
+    # Fig 1: renewables share vs target
     fig, ax = plt.subplots(figsize=(7, 4))
     ax.plot(res.year, res.share_pct, color=BLUE, lw=2, marker="o", ms=4,
             markerfacecolor=BLUE, markeredgecolor="#fcfcfb", markeredgewidth=1.2)
@@ -112,7 +112,7 @@ def main() -> None:
     spine_cleanup(ax)
     fig.savefig(FIGS / "fig1_renewables_share.png")
 
-    # Fig 2 — solar capacity vs negative-price hours (the cannibalization pair)
+    # Fig 2: solar capacity vs negative-price hours
     fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
     axes[0].plot(m.year, m.solar_gw, color=BLUE, lw=2, marker="o", ms=4,
                  markerfacecolor=BLUE, markeredgecolor="#fcfcfb", markeredgewidth=1.2)
@@ -121,12 +121,12 @@ def main() -> None:
     axes[1].set_title("Hours with negative day-ahead prices", loc="left", fontsize=10, color=INK)
     for ax_ in axes:
         spine_cleanup(ax_)
-    fig.suptitle(f"Same system, two curves — Pearson r = {r:.2f}",
+    fig.suptitle(f"Same system, two curves. Pearson r = {r:.2f}",
                  x=0.01, ha="left", fontsize=11, color=INK)
     fig.tight_layout(rect=(0, 0, 1, 0.92))
     fig.savefig(FIGS / "fig2_solar_vs_negative_prices.png")
 
-    # Fig 3 — redispatch cost
+    # Fig 3: redispatch cost
     fig, ax = plt.subplots(figsize=(7, 4))
     ax.bar(red.year, red.cost_meur / 1000, color=BLUE, width=0.55)
     ax.set_title("Congestion management (redispatch etc.) cost, EUR bn",
@@ -134,7 +134,7 @@ def main() -> None:
     spine_cleanup(ax)
     fig.savefig(FIGS / "fig3_redispatch_cost.png")
 
-    # Fig 4 — electrification momentum
+    # Fig 4: electrification momentum
     fig, ax = plt.subplots(figsize=(7, 4))
     ax.plot(elec.year, elec.heat_pump_sales_k, color=BLUE, lw=2, marker="o", ms=4,
             markerfacecolor=BLUE, markeredgecolor="#fcfcfb", markeredgewidth=1.2,
