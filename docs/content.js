@@ -88,7 +88,7 @@
     },
     hero: {
       kicker: "An independent study · Germany · August 2026",
-      title: "Germany is rebuilding its power system. The bottleneck has moved <em>from generation to the grid.</em>",
+      title: "The grid is <em>the new bottleneck.</em>",
       sub: "In 2025, renewable sources covered a record 55.1 percent of German electricity demand. In the same year, wholesale prices were negative for 573 hours, and battery projects totalling more than 500&nbsp;GW stood in grid connection queues. This study works through that paradox with sourced data, an interactive load model, and four strategic questions facing the utility at the centre of it: E.ON.",
       badge1: "🇩🇪 Bilingual EN/DE",
       badge2: "📊 Every figure sourced",
@@ -365,7 +365,7 @@
     },
     hero: {
       kicker: "Eine unabhängige Studie · Deutschland · August 2026",
-      title: "Deutschland baut sein Stromsystem um. Der Engpass ist gewandert: <em>von der Erzeugung ins Netz.</em>",
+      title: "Das Netz ist <em>der neue Engpass.</em>",
       sub: "2025 deckten erneuerbare Quellen einen Rekordanteil von 55,1 Prozent des deutschen Strombedarfs. Im selben Jahr waren die Großhandelspreise 573 Stunden lang negativ, und Batterieprojekte mit zusammen über 500&nbsp;GW standen in den Netzanschluss-Warteschlangen. Diese Studie arbeitet dieses Paradox auf: mit belegten Daten, einem interaktiven Lastmodell und vier strategischen Fragen an das Unternehmen in der Mitte des Geschehens, E.ON.",
       badge1: "🇩🇪 Zweisprachig DE/EN",
       badge2: "📊 Jede Zahl belegt",
