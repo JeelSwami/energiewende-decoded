@@ -28,7 +28,7 @@ After the asset swap with RWE, completed in 2020, E.ON became Europe's largest d
 
 ## Using this work
 
-The study, the compiled datasets and the code are free to use for **study, teaching and research** with attribution to Jeel Swami and a link to this repository. **Commercial use requires my written permission** (jeelswamis@gmail.com). The primary data remains the property of its original publishers, which are credited in [`data/README.md`](data/README.md) and in the study's source register; if you republish that data, credit them, not me. Details in [LICENSE](LICENSE).
+The study, the compiled datasets and the code are free to use for **study, teaching and research** with attribution to Jeel Swami and a link to this repository. **Commercial use requires my written permission** (please [open an issue](https://github.com/JeelSwami/energiewende-decoded/issues) to ask). The primary data remains the property of its original publishers, which are credited in [`data/README.md`](data/README.md) and in the study's source register; if you republish that data, credit them, not me. Details in [LICENSE](LICENSE).
 
 ## Repository structure
 
@@ -63,4 +63,4 @@ This study stands on the public work of the institutions that measure Germany's 
 
 I am a physicist working in data science, on my way into the energy field. My research background is in computational and experimental condensed matter physics, where I studied the electronic and magnetic properties of correlated perovskite materials, followed by postdoctoral research on materials for energy science. Since then my work has moved to the intersection of physics, data and AI, training and evaluating models for scientific reasoning. On GitHub you will also find a [machine learning pipeline for semiconductor band gaps](https://github.com/JeelSwami/Materials-Band-Gap-Prediction-ML-), a [dashboard of EU research funding in North Rhine-Westphalia](https://github.com/JeelSwami/nrw-funding-dashboard), and [the vocabulary trainer I built on the way to German C1](https://github.com/JeelSwami/wortschatz-trainer).
 
-📫 jeelswamis@gmail.com · GitHub [@JeelSwami](https://github.com/JeelSwami)
+📫 jeel.swami@outlook.com · GitHub [@JeelSwami](https://github.com/JeelSwami)

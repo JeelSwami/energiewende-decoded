@@ -370,7 +370,7 @@
       link1: "<strong>This project</strong> · <a href='https://github.com/JeelSwami/energiewende-decoded' target='_blank' rel='noopener'>github.com/JeelSwami/energiewende-decoded</a>",
       link2: "<strong>EU research funding in NRW</strong> · <a href='https://github.com/JeelSwami/nrw-funding-dashboard' target='_blank' rel='noopener'>an interactive dashboard from CORDIS and Eurostat data</a>",
       link3: "<strong>Materials informatics</strong> · <a href='https://github.com/JeelSwami/Materials-Band-Gap-Prediction-ML-' target='_blank' rel='noopener'>band gap prediction from atomic descriptors</a>",
-      link4: "<strong>Contact</strong> · <a href='mailto:jeelswamis@gmail.com'>jeelswamis@gmail.com</a> · <a href='https://github.com/JeelSwami' target='_blank' rel='noopener'>@JeelSwami</a>",
+      link4: "<strong>Contact</strong> · <a href='mailto:jeel.swami@outlook.com'>jeel.swami@outlook.com</a> · <a href='https://github.com/JeelSwami' target='_blank' rel='noopener'>@JeelSwami</a>",
     },
     footer: {
       left: "© 2026 Jeel Swami · CC BY-NC 4.0 · Free for study and research with attribution; commercial use requires permission. The data remains the property of its original publishers.",
@@ -743,7 +743,7 @@
       link1: "<strong>Dieses Projekt</strong> · <a href='https://github.com/JeelSwami/energiewende-decoded' target='_blank' rel='noopener'>github.com/JeelSwami/energiewende-decoded</a>",
       link2: "<strong>EU-Forschungsförderung in NRW</strong> · <a href='https://github.com/JeelSwami/nrw-funding-dashboard' target='_blank' rel='noopener'>ein interaktives Dashboard aus CORDIS- und Eurostat-Daten</a>",
       link3: "<strong>Materialinformatik</strong> · <a href='https://github.com/JeelSwami/Materials-Band-Gap-Prediction-ML-' target='_blank' rel='noopener'>Bandlücken-Vorhersage aus Atomdeskriptoren</a>",
-      link4: "<strong>Kontakt</strong> · <a href='mailto:jeelswamis@gmail.com'>jeelswamis@gmail.com</a> · <a href='https://github.com/JeelSwami' target='_blank' rel='noopener'>@JeelSwami</a>",
+      link4: "<strong>Kontakt</strong> · <a href='mailto:jeel.swami@outlook.com'>jeel.swami@outlook.com</a> · <a href='https://github.com/JeelSwami' target='_blank' rel='noopener'>@JeelSwami</a>",
     },
     footer: {
       left: "© 2026 Jeel Swami · CC BY-NC 4.0 · Frei für Studium und Forschung mit Namensnennung; kommerzielle Nutzung nur mit Zustimmung. Die Daten bleiben Eigentum ihrer ursprünglichen Herausgeber.",
