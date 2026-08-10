@@ -2,12 +2,15 @@
 
 **A bilingual (EN/DE) data study of Germany's energy transition, and what it means for a grid and retail utility like E.ON.**
 
-**Live study → [jeelswami.github.io/energiewende-decoded](https://jeelswami.github.io/energiewende-decoded/)**
+**Deployed at: [jeelswami.github.io/energiewende-decoded](https://jeelswami.github.io/energiewende-decoded/)**
 
 [![Live study](https://img.shields.io/badge/live-GitHub%20Pages-2a78d6)](https://jeelswami.github.io/energiewende-decoded/)
 [![Language](https://img.shields.io/badge/languages-EN%20%7C%20DE-eb6834)](#)
 [![Python](https://img.shields.io/badge/analysis-Python%20%2B%20pandas-1baf7a)](analysis/)
+[![Status](https://img.shields.io/badge/status-active-1baf7a)](#)
 [![License](https://img.shields.io/badge/licence-CC%20BY--NC%204.0-52514e)](LICENSE)
+
+![The study's opening view: The grid decade, with headline 2025 figures for renewable share, negative price hours, grid investment need and the battery connection queue](assets/screenshot-study.png)
 
 ## What this is
 
