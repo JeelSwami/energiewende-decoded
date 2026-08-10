@@ -2,7 +2,7 @@
 
 *An independent analysis by Jeel Swami · August 2026 · [Interactive version](https://jeelswami.github.io/energiewende-decoded/)*
 
-> **Independence note.** This analysis rests only on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. Sources are listed in [`data/README.md`](data/README.md) and in the interactive study's source register. Free for study and research use with attribution; commercial use requires permission (see [LICENSE](LICENSE)).
+> **Independence note.** This analysis rests only on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. Sources are listed in [`data/README.md`](data/README.md) and in the interactive study's source register. Free for study and research use with attribution; commercial use requires permission (see [LICENSE](LICENSE)). This is educational research, not investment advice and not an investment recommendation; it makes no statement about any company's shares.
 
 ## Summary
 
@@ -14,7 +14,7 @@ Five findings carry this study.
 
 **Third, capital decides everything.** Germany's electricity grids need on the order of 360 billion euros by 2045 on BNetzA-based figures, and industry estimates reach 651 billion. Distribution operators alone need about 110 billion by 2033. A study by KfW Research and PwC puts the sector's financing gap at 346 billion euros; utilities can self-fund roughly a quarter of what the transition asks of them. Whoever solves the equity question builds the grid.
 
-**Fourth, E.ON is the clearest exposure to this decade.** After the asset swap with RWE, E.ON is Europe's largest distribution operator and energy retailer. In 2025 it reported adjusted EBITDA of 9.8 billion euros, of which 7.7 billion came from networks, invested a record 8.5 billion, and announced a 48 billion euro programme for 2026 to 2030 with an EBITDA ambition of about 13 billion by 2030. Its constraints, regulatory returns under the new NEST framework, the queue, financing headroom, and retail commoditisation, are the sector's constraints in miniature.
+**Fourth, E.ON is the clearest expression of this decade.** After the asset swap with RWE, E.ON is Europe's largest distribution operator and energy retailer. In 2025 it reported adjusted EBITDA of 9.8 billion euros, of which 7.7 billion came from networks, invested a record 8.5 billion, and announced a 48 billion euro programme for 2026 to 2030 with an EBITDA ambition of about 13 billion by 2030. Its constraints, regulatory returns under the new NEST framework, the queue, financing headroom, and retail commoditisation, are the sector's constraints in miniature.
 
 **Fifth, four practical questions follow**, and they are the substance of section 4: how to order the queue, how to finance the programme, how to make household flexibility a product, and where AI genuinely defers capital spending.
 

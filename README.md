@@ -20,7 +20,7 @@ I wrote this study to work through that shift the way I was trained to work thro
 3. **A reproducible analysis layer** ([`analysis/`](analysis/)): pandas and matplotlib code that derives the statistics quoted in the study, among them the finding that reaching the 80 percent target for 2030 requires double the historical pace, and a correlation of r = 0.82 between installed solar capacity and hours of negative prices.
 4. **A written case study** ([`CASE_STUDY.md`](CASE_STUDY.md)): market context, a close look at E.ON, and four strategy questions with quantified answers.
 
-> **Independence note.** This is a personal analysis based only on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. All trademarks belong to their owners.
+> **Independence note.** This is a personal analysis based only on public information. It is not affiliated with, endorsed by, or commissioned by E.ON SE or any other company mentioned. All trademarks belong to their owners; names are used only to identify the companies, and no logos or brand assets appear anywhere in this work. It is educational research, not investment advice and not an investment recommendation.
 
 ## Why E.ON as the case
 
